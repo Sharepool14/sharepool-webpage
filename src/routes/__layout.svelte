@@ -1,7 +1,10 @@
 <script lang="ts">
 	import '../app.scss';
+	import Navbar from "$lib/widgets/nav/Navbar.svelte"
+	export const links:string[] = ["about"];
 </script>
 
+<Navbar {links}/>
 
 <main>
 	<slot />

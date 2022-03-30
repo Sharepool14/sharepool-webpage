@@ -1,0 +1,29 @@
+$base-size: 2rem;
+$sizes: (
+    "thin": $base-size * 0.25,
+    "narrow": $base-size * 0.5,
+    "light": $base-size * 0.75,
+    "regular": $base-size * 1,
+    "heavy": $base-size * 1.5,
+    "wide": $base-size * 2,
+    "thick": $base-size * 4
+);
+
+$sides: ("top", "bottom", "left", "right", "inline", "block");
+
+@each $size-name, $size-value in $sizes {
+    .padding-#{$size-name}{
+        padding: $size-value;
+    }
+    .margin-#{$size-name}{
+        margin: $size-value;
+    }
+    @each $side in $sides{
+        .padding-#{$side}-#{$size-name}{
+            padding-#{$side}: $size-value;
+        }
+        .margin-#{$side}-#{$size-name}{
+            margin-#{$side}: $size-value;
+        }
+    }
+}
